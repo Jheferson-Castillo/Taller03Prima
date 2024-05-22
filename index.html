@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Pensión</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="gender-selection">
+        <label>
+            <input type="radio" name="gender" value="Hombre" checked> Hombre
+        </label>
+        <label>
+            <input type="radio" name="gender" value="Mujer"> Mujer
+        </label>
+    </div>
+    <div class="input-group">
+        <label for="age">¿Cuántos años tienes?</label>
+        <input type="number" id="age" min="10" step="1" onkeydown="return event.keyCode !== 38 && event.keyCode !== 40">
+    </div>
+    <div class="input-group">
+        <label for="monthlyIncome">Ingreso mensual</label>
+        <input type="number" id="monthlyIncome" min="0" step="0.01" onkeydown="return event.keyCode !== 38 && event.keyCode !== 40">
+    </div>
+    <div class="input-group">
+        <label for="currentBalance">Saldo actual en tu fondo</label>
+        <input type="number" id="currentBalance" min="0" step="0.01" onkeydown="return event.keyCode !== 38 && event.keyCode !== 40">
+    </div>
+    <button class="calculate-button" onclick="calculatePension()">Calcular pensión</button>
+    
+    <div class="result">
+        <div class="result-box">
+            <div class="result-icon">💸</div>
+            <div class="result-text">Pensión estimada</div>
+            <div class="result-value">S/ <span id="estimatedPension">0.00</span></div>
+        </div>
+        <div class="result-box">
+            <div class="result-icon">📈</div>
+            <div class="result-text">Fondo estimado</div>
+            <div class="result-value">S/ <span id="estimatedFund">0.00</span></div>
+        </div>
+        <div class="result-box">
+            <div class="result-icon">💰</div>
+            <div class="result-text">Saldo actual de tu fondo</div>
+            <div class="result-value">S/ <span id="currentFundBalance">0.00</span></div>
+        </div>
+    </div>
+</div>
+
+<script src="main.js"></script>
+
+</body>
+</html>
